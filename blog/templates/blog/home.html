@@ -1,0 +1,16 @@
+
+    {% extends "blog/base.html" %}
+    {% block content %}
+    <h1>Blog Home!!!!</h1>
+    <div class="jumbotron">
+
+     {%  for post in posts %}
+    <h1>  <a href="{% url 'post-detail' post.id  %}">{{ post.title }}</a></h1>
+      <p>By <strong>{{ post.author }}</strong> on <small>{{post.date_posted}}</small></p>
+      <p>{{ post.content }}</p>
+
+      {% endfor %}
+
+        </div>
+
+    {% endblock content %}
